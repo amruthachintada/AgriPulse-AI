@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #071C14;
+    --bg-secondary: #0B2A1D;
+    --bg-forest: #123C29;
+    --green-leaf: #3D8B55;
+    --green-fresh: #76B85A;
+    --green-sage: #A8C99A;
+    --text-offwhite: #EEF3E5;
+    --text-white: #F7FAF4;
+    --accent-warning: #E8B85A;
+    --accent-danger: #D86A5B;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-offwhite);
+    font-family: 'Manrope', 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: rgba(11, 42, 29, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(18, 60, 41, 0.75);
+  border-color: rgba(118, 184, 90, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(118, 184, 90, 0.12);
+}
+
+.glass-nav {
+  background: rgba(7, 28, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-input {
+  background: rgba(18, 60, 41, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F7FAF4;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #76B85A;
+  box-shadow: 0 0 0 3px rgba(118, 184, 90, 0.2);
+  background: rgba(18, 60, 41, 0.8);
+}
+
+/* Custom Glow & Gradients */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(118, 184, 90, 0.15) 0%, rgba(7, 28, 20, 0) 70%);
+}
+
+.gradient-text-green {
+  background: linear-gradient(135deg, #76B85A 0%, #A8C99A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-btn-green {
+  background: linear-gradient(135deg, #3D8B55 0%, #76B85A 100%);
+  color: #F7FAF4;
+  transition: all 0.3s ease;
+}
+
+.gradient-btn-green:hover {
+  background: linear-gradient(135deg, #469c60 0%, #85c767 100%);
+  box-shadow: 0 0 20px rgba(118, 184, 90, 0.4);
+}
+
+/* AI Laser Scanning Effect */
+@keyframes laser-scan {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.8;
+  }
+}
+
+.animate-laser-scan {
+  animation: laser-scan 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate;
+}
+
+/* Pulse Glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Waveform animation */
+@keyframes wave {
+  0%, 100% { height: 8px; }
+  50% { height: 28px; }
+}
+
+.animate-wave-bar {
+  animation: wave 1.2s ease-in-out infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #071C14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #123C29;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3D8B55;
+}
